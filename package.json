@@ -27,6 +27,14 @@
     "firebase",
     "scaffold"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/shayen71421/rapidbuild.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shayen71421/rapidbuild/issues"
+  },
+  "homepage": "https://github.com/shayen71421/rapidbuild#readme",
   "author": "",
   "license": "MIT",
   "dependencies": {

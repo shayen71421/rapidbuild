@@ -2,6 +2,8 @@
 
 `rapidbuild` is an open-source npm CLI for scaffolding complete hackathon-ready applications. It is designed to generate a working product foundation with framework code, authentication, database setup, UI tooling, deployment files, linting, environment examples, and common boilerplate.
 
+Repository: https://github.com/shayen71421/rapidbuild
+
 ```bash
 npx rapidbuild my-app
 ```
