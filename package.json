@@ -1,10 +1,10 @@
 {
-  "name": "rapidbuild",
+  "name": "@shayen/rapidbuild",
   "version": "0.1.0",
   "description": "Scaffold fully configured hackathon-ready applications from an interactive CLI.",
   "type": "module",
   "bin": {
-    "rapidbuild": "./dist/index.js"
+    "rapidbuild": "dist/index.js"
   },
   "files": [
     "dist",

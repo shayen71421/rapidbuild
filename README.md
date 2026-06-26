@@ -5,13 +5,13 @@
 Repository: https://github.com/shayen71421/rapidbuild
 
 ```bash
-npx rapidbuild my-app
+npx @shayen/rapidbuild my-app
 ```
 
 or run the wizard:
 
 ```bash
-npx rapidbuild
+npx @shayen/rapidbuild
 ```
 
 ## Features
@@ -26,12 +26,12 @@ npx rapidbuild
 ## Usage
 
 ```bash
-npx rapidbuild my-app
-npx rapidbuild my-app --yes
-npx rapidbuild my-app --preset ai-chat
-npx rapidbuild my-app --template next-firebase
-npx rapidbuild my-app --package-manager pnpm
-npx rapidbuild my-app --no-install --no-git
+npx @shayen/rapidbuild my-app
+npx @shayen/rapidbuild my-app --yes
+npx @shayen/rapidbuild my-app --preset ai-chat
+npx @shayen/rapidbuild my-app --template next-firebase
+npx @shayen/rapidbuild my-app --package-manager pnpm
+npx @shayen/rapidbuild my-app --no-install --no-git
 ```
 
 ## Presets
