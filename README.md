@@ -51,6 +51,8 @@ my-app/
 └── README.md
 ```
 
+RapidBuild prunes unused integrations. If you choose no Firestore, Firestore helpers and rules are omitted. If you choose no Tailwind, Tailwind and PostCSS config files are omitted. If you choose no auth, auth pages, providers, middleware, hooks, and auth dependencies are omitted.
+
 ## Terminal Demo
 
 ```bash

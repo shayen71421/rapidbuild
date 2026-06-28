@@ -95,5 +95,7 @@ function printNextSteps(config: ProjectConfig): void {
   }
   console.log(`  ${commands[config.packageManager]}`);
   console.log();
-  console.log(chalk.dim("Edit .env.local with your Firebase keys before signing in."));
+  if (config.auth === "firebase" || config.database === "firestore" || config.deployment === "firebase-hosting") {
+    console.log(chalk.dim("Edit .env.local with your Firebase keys before signing in."));
+  }
 }

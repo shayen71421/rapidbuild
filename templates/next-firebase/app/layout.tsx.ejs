@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+<% if (config.auth !== "none") { %>
 import { AuthProvider } from "@/components/auth/AuthProvider";
 import { ToastProvider } from "@/components/ui/ToastProvider";
+<% } %>
 
 export const metadata: Metadata = {
   title: "<%= config.projectName %>",
@@ -12,9 +14,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
+        <% if (config.auth !== "none") { %>
         <ToastProvider>
           <AuthProvider>{children}</AuthProvider>
         </ToastProvider>
+        <% } else { %>
+        {children}
+        <% } %>
       </body>
     </html>
   );

@@ -39,6 +39,7 @@ function shouldUsePlugin(name: string, config: ProjectConfig): boolean {
     name === "core" ||
     name === "extras" ||
     (name === "ai" && config.ai !== "none") ||
+    (name === "firebase" && (config.auth === "firebase" || config.database === "firestore" || config.deployment === "firebase-hosting")) ||
     name === config.auth ||
     name === config.database ||
     name === config.deployment ||

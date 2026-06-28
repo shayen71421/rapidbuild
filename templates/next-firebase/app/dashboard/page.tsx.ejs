@@ -1,4 +1,4 @@
-"use client";
+<% if (config.auth !== "none") { %>"use client";
 
 import Link from "next/link";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
@@ -51,3 +51,16 @@ function Metric({ label, value }: { label: string; value: string }) {
     </div>
   );
 }
+<% } else { %>
+export default function DashboardPage() {
+  return (
+    <main className="min-h-screen bg-paper px-6 py-10 text-ink">
+      <div className="mx-auto max-w-5xl">
+        <p className="text-sm font-medium text-signal">Workspace</p>
+        <h1 className="mt-2 text-3xl font-bold">Dashboard</h1>
+        <p className="mt-4 max-w-2xl text-neutral-700">Authentication is disabled for this scaffold, so this route is public and contains no auth dependencies.</p>
+      </div>
+    </main>
+  );
+}
+<% } %>
