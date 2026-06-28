@@ -1,6 +1,8 @@
 # rapidbuild
 
-`rapidbuild` is an open-source npm CLI for scaffolding complete hackathon-ready applications. It is designed to generate a working product foundation with framework code, authentication, database setup, UI tooling, deployment files, linting, environment examples, and common boilerplate.
+Skip 2 hours of setup. Start building immediately.
+
+`rapidbuild` is an open-source npm CLI for scaffolding complete, configurable starter apps. Instead of stopping at a blank framework install, it generates a working product foundation with authentication, database wiring, UI tooling, deployment files, linting, environment examples, and common boilerplate.
 
 Repository: https://github.com/shayen71421/rapidbuild
 
@@ -13,6 +15,79 @@ or run the wizard:
 ```bash
 npx @shayen/rapidbuild
 ```
+
+## What You Get
+
+The first production-ready template generates a Next.js + TypeScript + Tailwind + Firebase app:
+
+```text
+my-app/
+├── app/
+│   ├── dashboard/
+│   ├── signin/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   └── auth/
+│       ├── AuthForm.tsx
+│       ├── AuthProvider.tsx
+│       ├── ProtectedRoute.tsx
+│       └── SignOutButton.tsx
+├── hooks/
+│   └── useAuth.ts
+├── lib/
+│   ├── auth.ts
+│   └── firebase.ts
+├── types/
+│   └── auth.ts
+├── firebase.json
+├── firestore.rules
+├── .env.example
+└── README.md
+```
+
+## Terminal Demo
+
+```bash
+$ npx @shayen/rapidbuild my-app
+
+rapidbuild
+Scaffold complete hackathon apps, not empty folders.
+
+✔ Framework: Next.js
+✔ Language: TypeScript
+✔ Styling: Tailwind CSS
+✔ Authentication: Firebase Auth
+✔ Database: Firestore
+✔ Extras: ESLint, Prettier, Dark Mode
+
+Creating project...
+
+✔ Project files generated
+✔ Dependencies installed
+✔ Git repository initialized
+
+RapidBuild app created.
+  cd my-app
+  npm run dev
+```
+
+## Why RapidBuild?
+
+| Feature | create-next-app | RapidBuild |
+| --- | --- | --- |
+| Next.js app scaffold | Yes | Yes |
+| TypeScript setup | Yes | Yes |
+| Tailwind setup | Optional | Yes |
+| Firebase Auth | No | Yes |
+| Firestore | No | Yes |
+| Protected routes | No | Yes |
+| Auth pages/components | No | Yes |
+| `.env.example` | No | Yes |
+| Firebase config and rules | No | Yes |
+| Git initialization | Yes | Yes |
+| Production-oriented boilerplate | Minimal | Yes |
 
 ## Features
 
@@ -59,6 +134,49 @@ The production-ready template is `next-firebase`:
 - `.env.example`
 
 Additional template directories are included as stubs to keep the project easy to extend.
+
+## Visuals
+
+Screenshots and recordings are planned for the GitHub and npm pages:
+
+- Terminal recording of the CLI wizard
+- Generated login page
+- Generated protected dashboard
+- Generated folder structure
+
+## Roadmap
+
+The current focus is making the Next.js + Firebase path excellent before expanding broadly:
+
+- Flawless Firebase setup and clearer Firebase documentation
+- Firestore helper utilities and example data flows
+- Middleware-based route protection where it improves the generated app
+- Supabase template
+- Prisma + PostgreSQL integration
+- Auth.js or Better Auth integration
+- Stripe, UploadThing, and Resend plugins
+
+Future add-on commands are planned after project creation is stable:
+
+```bash
+rapidbuild add firebase
+rapidbuild add clerk
+rapidbuild add stripe
+rapidbuild add resend
+rapidbuild add prisma
+rapidbuild add shadcn
+rapidbuild add dashboard
+```
+
+## Website
+
+A small docs and landing site is planned at `rapidbuild.dev` with:
+
+- Animated terminal demo
+- Feature comparison
+- Template gallery
+- Plugin documentation
+- Generated app screenshots
 
 ## Local Development
 
