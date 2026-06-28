@@ -98,18 +98,32 @@ RapidBuild app created.
 ## Features
 
 - Interactive Commander + Inquirer CLI
-- Presets for common hackathon app shapes
+- Presets for the currently supported Next.js path
 - Modular generator and plugin architecture
 - Complete first template: Next.js + TypeScript + Tailwind CSS + Firebase Auth + Firestore
 - Dependency installation, git initialization, `.env.example`, README generation, and initial commit
 - Package manager selection for `npm`, `pnpm`, `yarn`, and `bun`
+
+## Working Today
+
+The CLI currently exposes only the combinations that are verified:
+
+- Framework: Next.js
+- Language: TypeScript
+- Styling: Tailwind CSS or None
+- Authentication: Firebase Auth or None
+- Database: Firestore or None
+- Deployment: Vercel, Firebase Hosting, or None
+- Extras: ESLint, Prettier, Husky, Docker, GitHub Actions, PWA, Dark Mode, Analytics
+
+React, Vite, Better Auth, Auth.js, Clerk, Supabase, Prisma, Drizzle, MongoDB, UploadThing, Resend, Stripe, React Hook Form, and Zod are roadmap items, not interactive CLI choices yet.
 
 ## Usage
 
 ```bash
 npx @shayen/rapidbuild my-app
 npx @shayen/rapidbuild my-app --yes
-npx @shayen/rapidbuild my-app --preset ai-chat
+npx @shayen/rapidbuild my-app --preset dashboard
 npx @shayen/rapidbuild my-app --template next-firebase
 npx @shayen/rapidbuild my-app --package-manager pnpm
 npx @shayen/rapidbuild my-app --no-install --no-git
@@ -117,10 +131,7 @@ npx @shayen/rapidbuild my-app --no-install --no-git
 
 ## Presets
 
-- `ai-chat`
-- `startup`
 - `dashboard`
-- `ieee-event`
 
 ## First Supported Template
 
@@ -138,8 +149,6 @@ The production-ready template is `next-firebase`:
 - `firebase.json`
 - `firestore.rules`
 - `.env.example`
-
-Additional template directories are included as stubs to keep the project easy to extend.
 
 ## Visuals
 
@@ -160,19 +169,6 @@ The current focus is making the Next.js + Firebase path excellent before expandi
 - Deeper Better Auth, Auth.js, Clerk, and Supabase templates
 - Deeper Prisma, PostgreSQL, Drizzle, and MongoDB examples
 - Production examples for Stripe, UploadThing, Resend, React Hook Form, and Zod
-
-## Integration Coverage
-
-RapidBuild has plugin coverage for:
-
-- Authentication: Firebase Auth, Better Auth, Auth.js, Clerk, Supabase
-- Database: Firestore, Prisma, PostgreSQL, Drizzle, MongoDB, Supabase
-- Storage: UploadThing, Cloudinary, Firebase Storage
-- Email: Resend
-- Payments: Stripe
-- Forms: React Hook Form + Zod
-
-Firebase Auth + Firestore is the most complete full template today. The other integrations currently add dependencies, environment variables, and starter config/helper files so generated projects stay clean and ready to wire into product flows.
 
 Future add-on commands are planned after project creation is stable:
 

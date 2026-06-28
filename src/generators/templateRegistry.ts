@@ -13,35 +13,6 @@ export const templateRegistry: TemplateDefinition[] = [
       auth: "firebase",
       database: "firestore"
     }
-  },
-  {
-    name: "next-supabase",
-    displayName: "Next.js + Supabase",
-    directory: "next-supabase",
-    complete: false,
-    supported: {
-      framework: "next",
-      auth: "supabase",
-      database: "supabase"
-    }
-  },
-  {
-    name: "react",
-    displayName: "React",
-    directory: "react",
-    complete: false,
-    supported: {
-      framework: "react"
-    }
-  },
-  {
-    name: "vite",
-    displayName: "Vite",
-    directory: "vite",
-    complete: false,
-    supported: {
-      framework: "vite"
-    }
   }
 ];
 
