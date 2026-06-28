@@ -1,4 +1,4 @@
-<% if (config.auth !== "none") { %>"use client";
+<% if (config.auth === "firebase") { %>"use client";
 
 import Link from "next/link";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";

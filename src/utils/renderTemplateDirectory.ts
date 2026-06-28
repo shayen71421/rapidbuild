@@ -50,7 +50,11 @@ function renderFilename(filename: string, config: ProjectConfig): string {
 
 function shouldIncludePath(relativePath: string, config: ProjectConfig): boolean {
   const normalized = relativePath.split(path.sep).join("/");
-  const hasFirebase = config.auth === "firebase" || config.database === "firestore" || config.deployment === "firebase-hosting";
+  const hasFirebase =
+    config.auth === "firebase" ||
+    config.database === "firestore" ||
+    config.storage === "firebase-storage" ||
+    config.deployment === "firebase-hosting";
 
   if (normalized.endsWith("tailwind.config.ts") || normalized.endsWith("postcss.config.js")) {
     return ["tailwind", "shadcn"].includes(config.styling);
@@ -78,7 +82,7 @@ function shouldIncludePath(relativePath: string, config: ProjectConfig): boolean
     normalized.endsWith("/app/profile/page.tsx") ||
     normalized.endsWith("/middleware.ts")
   ) {
-    return config.auth !== "none";
+    return config.auth === "firebase";
   }
 
   if (normalized.endsWith("/app/dashboard/page.tsx")) {

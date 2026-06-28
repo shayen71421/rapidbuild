@@ -62,7 +62,8 @@ async function applyPluginMetadata(config: ProjectConfig, targetDir: string, plu
 
   await mergePackageJson(targetDir, {
     dependencies,
-    devDependencies
+    devDependencies,
+    scripts: Object.assign({}, ...plugins.map((plugin) => plugin.scripts?.(config) ?? {})) as Record<string, string>
   });
 
   if (Object.keys(env).length > 0) {
@@ -95,7 +96,7 @@ function printNextSteps(config: ProjectConfig): void {
   }
   console.log(`  ${commands[config.packageManager]}`);
   console.log();
-  if (config.auth === "firebase" || config.database === "firestore" || config.deployment === "firebase-hosting") {
+  if (config.auth === "firebase" || config.database === "firestore" || config.storage === "firebase-storage" || config.deployment === "firebase-hosting") {
     console.log(chalk.dim("Edit .env.local with your Firebase keys before signing in."));
   }
 }

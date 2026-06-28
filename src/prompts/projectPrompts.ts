@@ -4,9 +4,13 @@ import {
   authChoices,
   databaseChoices,
   deploymentChoices,
+  emailChoices,
   extraChoices,
+  formsChoices,
   frameworkChoices,
   languageChoices,
+  paymentsChoices,
+  storageChoices,
   stylingChoices
 } from "../constants/options.js";
 import { templateRegistry } from "../generators/templateRegistry.js";
@@ -79,6 +83,34 @@ export async function promptForConfig(
       message: "AI",
       choices: aiChoices,
       default: defaults.ai
+    },
+    {
+      type: "list",
+      name: "storage",
+      message: "Storage",
+      choices: storageChoices,
+      default: defaults.storage
+    },
+    {
+      type: "list",
+      name: "email",
+      message: "Email",
+      choices: emailChoices,
+      default: defaults.email
+    },
+    {
+      type: "list",
+      name: "payments",
+      message: "Payments",
+      choices: paymentsChoices,
+      default: defaults.payments
+    },
+    {
+      type: "list",
+      name: "forms",
+      message: "Forms",
+      choices: formsChoices,
+      default: defaults.forms
     },
     {
       type: "list",

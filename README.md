@@ -157,10 +157,22 @@ The current focus is making the Next.js + Firebase path excellent before expandi
 - Flawless Firebase setup and clearer Firebase documentation
 - Firestore helper utilities and example data flows
 - Middleware-based route protection where it improves the generated app
-- Supabase template
-- Prisma + PostgreSQL integration
-- Auth.js or Better Auth integration
-- Stripe, UploadThing, and Resend plugins
+- Deeper Better Auth, Auth.js, Clerk, and Supabase templates
+- Deeper Prisma, PostgreSQL, Drizzle, and MongoDB examples
+- Production examples for Stripe, UploadThing, Resend, React Hook Form, and Zod
+
+## Integration Coverage
+
+RapidBuild has plugin coverage for:
+
+- Authentication: Firebase Auth, Better Auth, Auth.js, Clerk, Supabase
+- Database: Firestore, Prisma, PostgreSQL, Drizzle, MongoDB, Supabase
+- Storage: UploadThing, Cloudinary, Firebase Storage
+- Email: Resend
+- Payments: Stripe
+- Forms: React Hook Form + Zod
+
+Firebase Auth + Firestore is the most complete full template today. The other integrations currently add dependencies, environment variables, and starter config/helper files so generated projects stay clean and ready to wire into product flows.
 
 Future add-on commands are planned after project creation is stable:
 

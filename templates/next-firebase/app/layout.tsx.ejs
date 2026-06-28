@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-<% if (config.auth !== "none") { %>
+<% if (config.auth === "firebase") { %>
 import { AuthProvider } from "@/components/auth/AuthProvider";
 import { ToastProvider } from "@/components/ui/ToastProvider";
 <% } %>
@@ -14,7 +14,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
-        <% if (config.auth !== "none") { %>
+        <% if (config.auth === "firebase") { %>
         <ToastProvider>
           <AuthProvider>{children}</AuthProvider>
         </ToastProvider>

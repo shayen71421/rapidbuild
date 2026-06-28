@@ -5,7 +5,7 @@ export const firebasePlugin: Plugin = {
   dependencies: () => ["firebase"],
   devDependencies: (config) => (config.deployment === "firebase-hosting" ? ["firebase-tools"] : []),
   envVariables: (config): Record<string, string> =>
-    config.auth === "firebase" || config.database === "firestore" || config.deployment === "firebase-hosting"
+    config.auth === "firebase" || config.database === "firestore" || config.storage === "firebase-storage" || config.deployment === "firebase-hosting"
       ? {
           NEXT_PUBLIC_FIREBASE_API_KEY: "",
           NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: "",
