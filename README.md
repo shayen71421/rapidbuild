@@ -149,6 +149,8 @@ npx @shayen/rapidbuild my-app --no-install --no-git
 
 - `dashboard`
 
+Not currently active: `ai-chat`, `startup`, and `ieee-event`. Those presets will return when their required integrations are fully wired and verified.
+
 ## First Supported Template
 
 The production-ready template is `next-firebase`:
