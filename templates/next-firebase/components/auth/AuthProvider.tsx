@@ -1,8 +1,8 @@
 "use client";
 
-import { onAuthStateChanged, type User } from "firebase/auth";
+import { onIdTokenChanged, type User } from "firebase/auth";
 import { createContext, useEffect, useMemo, useState } from "react";
-import { auth } from "@/lib/firebase";
+import { getFirebaseAuth } from "@/lib/firebase";
 import type { AuthContextValue } from "@/types/auth";
 
 export const AuthContext = createContext<AuthContextValue | undefined>(undefined);
@@ -12,13 +12,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    return onAuthStateChanged(auth, (nextUser) => {
+    const auth = getFirebaseAuth();
+    return onIdTokenChanged(auth, (nextUser) => {
       setUser(nextUser);
       setLoading(false);
+
+      if (nextUser) {
+        document.cookie = "rapidbuild_auth=1; path=/; max-age=604800; samesite=lax";
+      } else {
+        document.cookie = "rapidbuild_auth=; path=/; max-age=0; samesite=lax";
+      }
     });
   }, []);
 
-  const value = useMemo(() => ({ user, loading }), [user, loading]);
+  async function refreshUser() {
+    const auth = getFirebaseAuth();
+    await auth.currentUser?.reload();
+    setUser(auth.currentUser);
+  }
+
+  const value = useMemo(() => ({ user, loading, refreshUser }), [user, loading]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

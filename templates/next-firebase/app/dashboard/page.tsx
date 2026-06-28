@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import { SignOutButton } from "@/components/auth/SignOutButton";
 import { useAuth } from "@/hooks/useAuth";
@@ -16,13 +17,25 @@ export default function DashboardPage() {
               <p className="text-sm font-medium text-signal">Protected workspace</p>
               <h1 className="mt-2 text-3xl font-bold">Dashboard</h1>
             </div>
-            <SignOutButton />
+            <div className="flex flex-wrap items-center gap-3">
+              <Link className="rounded-md border border-neutral-300 px-4 py-2 text-sm font-semibold transition hover:bg-white" href="/profile">
+                Profile
+              </Link>
+              <SignOutButton />
+            </div>
           </div>
+
+          {!user?.emailVerified ? (
+            <div className="mt-8 rounded-lg border border-amber-200 bg-amber-50 p-5 text-amber-900">
+              <h2 className="font-semibold">Verify your email</h2>
+              <p className="mt-2 text-sm leading-6">Some production workflows should require verified email addresses. Visit your profile to resend the verification email.</p>
+            </div>
+          ) : null}
 
           <section className="mt-8 grid gap-4 md:grid-cols-3">
             <Metric label="Signed in as" value={user?.email ?? "Unknown"} />
             <Metric label="Auth provider" value="Firebase" />
-            <Metric label="Database" value="Firestore" />
+            <Metric label="Email verified" value={user?.emailVerified ? "Yes" : "No"} />
           </section>
         </div>
       </main>

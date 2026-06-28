@@ -14,24 +14,24 @@ type PackageJson = Record<string, unknown> & {
 const packageVersions: Record<string, string> = {
   "@anthropic-ai/sdk": "^0.27.3",
   "@google/generative-ai": "^0.21.0",
-  "@types/node": "^20.14.15",
-  "@types/react": "^18.3.3",
-  "@types/react-dom": "^18.3.0",
+  "@types/node": "^20.19.25",
+  "@types/react": "^19.2.17",
+  "@types/react-dom": "^19.2.3",
   ai: "^3.3.39",
-  autoprefixer: "^10.4.20",
+  autoprefixer: "^10.5.2",
   "class-variance-authority": "^0.7.0",
   eslint: "^8.57.0",
-  "eslint-config-next": "^14.2.5",
-  firebase: "^10.12.4",
+  "eslint-config-next": "^15.5.19",
+  firebase: "^12.15.0",
   "firebase-tools": "^13.13.3",
   husky: "^9.1.4",
-  "lucide-react": "^0.468.0",
+  "lucide-react": "^1.21.0",
   openai: "^4.56.0",
-  postcss: "^8.4.41",
+  postcss: "^8.5.16",
   prettier: "^3.3.3",
-  tailwindcss: "^3.4.10",
+  tailwindcss: "^3.4.19",
   "tailwind-merge": "^2.4.0",
-  typescript: "^5.5.4"
+  typescript: "^5.9.3"
 };
 
 export async function mergePackageJson(targetDir: string, updates: PackageJsonUpdates): Promise<void> {

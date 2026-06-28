@@ -1,15 +1,17 @@
 "use client";
 
 import { LogOut } from "lucide-react";
-import { signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
-import { auth } from "@/lib/firebase";
+import { signOutUser } from "@/lib/auth";
+import { useToast } from "@/components/ui/ToastProvider";
 
 export function SignOutButton() {
   const router = useRouter();
+  const { showToast } = useToast();
 
   async function handleSignOut() {
-    await signOut(auth);
+    await signOutUser();
+    showToast("Signed out.", "success");
     router.push("/");
   }
 

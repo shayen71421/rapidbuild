@@ -34,13 +34,17 @@ my-app/
 │       ├── AuthProvider.tsx
 │       ├── ProtectedRoute.tsx
 │       └── SignOutButton.tsx
+│   └── ui/
+│       └── ToastProvider.tsx
 ├── hooks/
 │   └── useAuth.ts
 ├── lib/
 │   ├── auth.ts
-│   └── firebase.ts
+│   ├── firebase.ts
+│   └── firestore.ts
 ├── types/
 │   └── auth.ts
+├── middleware.ts
 ├── firebase.json
 ├── firestore.rules
 ├── .env.example
