@@ -110,13 +110,29 @@ The CLI currently exposes only the combinations that are verified:
 
 - Framework: Next.js
 - Language: TypeScript
-- Styling: Tailwind CSS or None
-- Authentication: Firebase Auth or None
-- Database: Firestore or None
+- Styling: Tailwind CSS, None
+- Authentication: Firebase Auth, None
+- Database: Firestore, None
 - Deployment: Vercel, Firebase Hosting, or None
 - Extras: ESLint, Prettier, Husky, Docker, GitHub Actions, PWA, Dark Mode, Analytics
 
-React, Vite, Better Auth, Auth.js, Clerk, Supabase, Prisma, Drizzle, MongoDB, UploadThing, Resend, Stripe, React Hook Form, and Zod are roadmap items, not interactive CLI choices yet.
+These are the only options shown in the interactive wizard right now.
+
+## Not In The CLI Yet
+
+These are intentionally hidden until they are production-ready:
+
+| Area | Planned options |
+| --- | --- |
+| Frameworks | React, Vite |
+| Authentication | Better Auth, Auth.js, Clerk, Supabase |
+| Database | Prisma, PostgreSQL, Drizzle, MongoDB, Supabase |
+| Storage | UploadThing, Cloudinary, Firebase Storage |
+| Email | Resend |
+| Payments | Stripe |
+| Forms | React Hook Form, Zod |
+
+Some internal plugin scaffolding exists for future work, but RapidBuild does not advertise those options in the CLI until the generated app is verified end to end.
 
 ## Usage
 
