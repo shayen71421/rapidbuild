@@ -61,11 +61,10 @@ $ npx @shayen/rapidbuild my-app
 rapidbuild
 Scaffold complete hackathon apps, not empty folders.
 
-✔ Framework: Next.js
-✔ Language: TypeScript
 ✔ Styling: Tailwind CSS
 ✔ Authentication: Firebase Auth
 ✔ Database: Firestore
+✔ Deployment: Vercel
 ✔ Extras: ESLint, Prettier, Dark Mode
 
 Creating project...

@@ -45,7 +45,6 @@ export const storageChoices: Array<{ name: string; value: StorageProvider }> = [
 ];
 
 export const emailChoices: Array<{ name: string; value: EmailProvider }> = [
-  { name: "Resend", value: "resend" },
   { name: "None", value: "none" }
 ];
 

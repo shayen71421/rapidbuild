@@ -16,6 +16,8 @@ import {
 import { templateRegistry } from "../generators/templateRegistry.js";
 import type { ProjectConfig } from "../types.js";
 
+type Choice = { name: string; value: string };
+
 export async function promptForConfig(
   defaults: ProjectConfig,
   hasProjectName: boolean,
@@ -40,21 +42,23 @@ export async function promptForConfig(
         value: template.name
       })),
       default: defaults.template,
-      when: !hasTemplate && !hasPreset
+      when: !hasTemplate && !hasPreset && templateRegistry.length > 1
     },
     {
       type: "list",
       name: "framework",
       message: "Framework",
       choices: frameworkChoices,
-      default: defaults.framework
+      default: defaults.framework,
+      when: hasMultipleChoices(frameworkChoices)
     },
     {
       type: "list",
       name: "language",
       message: "Language",
       choices: languageChoices,
-      default: defaults.language
+      default: defaults.language,
+      when: hasMultipleChoices(languageChoices)
     },
     {
       type: "list",
@@ -82,35 +86,40 @@ export async function promptForConfig(
       name: "ai",
       message: "AI",
       choices: aiChoices,
-      default: defaults.ai
+      default: defaults.ai,
+      when: hasMultipleChoices(aiChoices)
     },
     {
       type: "list",
       name: "storage",
       message: "Storage",
       choices: storageChoices,
-      default: defaults.storage
+      default: defaults.storage,
+      when: hasMultipleChoices(storageChoices)
     },
     {
       type: "list",
       name: "email",
       message: "Email",
       choices: emailChoices,
-      default: defaults.email
+      default: defaults.email,
+      when: hasMultipleChoices(emailChoices)
     },
     {
       type: "list",
       name: "payments",
       message: "Payments",
       choices: paymentsChoices,
-      default: defaults.payments
+      default: defaults.payments,
+      when: hasMultipleChoices(paymentsChoices)
     },
     {
       type: "list",
       name: "forms",
       message: "Forms",
       choices: formsChoices,
-      default: defaults.forms
+      default: defaults.forms,
+      when: hasMultipleChoices(formsChoices)
     },
     {
       type: "list",
@@ -133,4 +142,8 @@ export async function promptForConfig(
     ...answers,
     projectName: (answers.projectName ?? defaults.projectName).trim()
   };
+}
+
+function hasMultipleChoices(choices: Choice[]): boolean {
+  return choices.length > 1;
 }
